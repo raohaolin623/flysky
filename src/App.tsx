@@ -15,7 +15,7 @@ import history from './routerHistory'
 
 // Route-based code splitting
 // Only pool is included in the main bundle because of it's the most visited page
-const Home = lazy(() => import('./views/Home'))
+// const Home = lazy(() => import('./views/Home'))
 const Farms = lazy(() => import('./views/Farms'))
 const Lottery = lazy(() => import('./views/Lottery'))
 const Ifos = lazy(() => import('./views/Ifos'))
@@ -26,6 +26,13 @@ const Team = lazy(() => import('./views/Teams/Team'))
 const Profile = lazy(() => import('./views/Profile'))
 const TradingCompetition = lazy(() => import('./views/TradingCompetition'))
 const Predictions = lazy(() => import('./views/Predictions'))
+
+const Home = lazy(() => import('./pages/home'))
+const EquityPool = lazy(() => import('./pages/equitypool'))
+const Repurchase = lazy(() => import('./pages/repurchase'))
+const Invitation = lazy(() => import('./pages/invitation'))
+const DAO = lazy(() => import('./pages/dao'))
+const Nft = lazy(() => import('./pages/nft'))
 
 // This config is required for number formatting
 BigNumber.config({
@@ -54,6 +61,21 @@ const App: React.FC = () => {
             </Route>
             <Route path="/pools">
               <Pools />
+            </Route>
+            <Route path="/equitypool">
+              <EquityPool />
+            </Route>
+            <Route path="/invitation">
+              <Invitation />
+            </Route>
+            <Route path="/repurchase">
+              <Repurchase />
+            </Route>
+            <Route path="/dao">
+              <DAO />
+            </Route>
+            <Route path="/nft">
+              <Nft />
             </Route>
             <Route path="/lottery">
               <Lottery />

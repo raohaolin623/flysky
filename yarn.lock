@@ -2079,6 +2079,10 @@
     eslint-plugin-react "^7.21.5"
     eslint-plugin-react-hooks "^4.0.0"
 
+"@pancakeswap/tool@git+https://github.com/raohaolin623/flysky-tool.git#v1.0.1":
+  version "1.0.0"
+  resolved "git+https://github.com/raohaolin623/flysky-tool.git#f90ee23847b6228121a13c5b3154b652b64f50df"
+
 "@pancakeswap/uikit@^0.37.0":
   version "0.37.0"
   resolved "https://registry.yarnpkg.com/@pancakeswap/uikit/-/uikit-0.37.0.tgz#eb399e9a6f72444f824432f46e365cd07a763018"

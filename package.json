@@ -2,6 +2,7 @@
   "name": "flysky",
   "version": "0.1.0",
   "private": true,
+  "homepage": ".",
   "scripts": {
     "analyze": "source-map-explorer 'build/static/js/*.js'",
     "start": "react-scripts start",
@@ -37,7 +38,7 @@
     "@ethersproject/abi": "^5.1.2",
     "@pancakeswap-libs/sdk": "^1.0.1",
     "@pancakeswap/uikit": "^0.37.0",
-    "@pancakeswap/tool": "git+https://github.com/raohaolin623/flysky-tool.git#v1.0.1",
+    "@pancakeswap/tool": "git+https://github.com/raohaolin623/flysky-tool.git#v1.0.3",
     "@reduxjs/toolkit": "^1.5.0",
     "@types/react": "^17.0.5",
     "@types/react-dom": "^17.0.4",
