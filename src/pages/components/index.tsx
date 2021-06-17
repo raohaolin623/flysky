@@ -60,6 +60,11 @@ const VerLine = styled.div`
   background-color: #333333;
   transform: scale(0.6, 1);
 `
+const Line = styled.div`
+  height: 1px;
+  background-color: #333333;
+  // transform: scale(0.95, 1);
+`
 
 const Btn = styled.div`
   display: inline-block;
@@ -72,4 +77,4 @@ const Btn = styled.div`
   cursor: pointer;
 `
 
-export { Flex, Card, Title1, Title1Thin, NormalText, LinkText, NumTextH1, NumTextH2, VerLine, Btn }
+export { Flex, Card, Title1, Title1Thin, NormalText, LinkText, NumTextH1, NumTextH2, Line, VerLine, Btn }

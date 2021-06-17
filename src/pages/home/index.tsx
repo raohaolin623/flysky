@@ -30,7 +30,7 @@ export default function () {
       </Flex.Row> */}
 
       <Flex.Row style={{ justifyContent: 'space-between', flexWrap: 'nowrap', margin: '48px 0 50px 0' }}>
-        <Card style={{ marginBottom: '16px', marginRight: '4px' }}>
+        <Card style={{ marginBottom: '16px', marginRight: '2px', padding: '24px' }}>
           <Flex.Row style={{ justifyContent: 'space-between', alignItems: 'stretch' }}>
             <Flex.Col style={{ alignItems: 'flex-start' }}>
               <NormalText style={{ marginBottom: '36px' }}>SLK balance</NormalText>
@@ -44,7 +44,7 @@ export default function () {
             </Flex.Col>
           </Flex.Row>
         </Card>
-        <Card style={{ marginBottom: '16px', marginRight: '4px' }}>
+        <Card style={{ marginBottom: '16px', marginRight: '2px', padding: '24px' }}>
           <Flex.Row style={{ justifyContent: 'space-between', alignItems: 'center' }}>
             <Flex.Col style={{ alignItems: 'flex-start' }}>
               <NormalText style={{ marginBottom: '36px' }}>Farm & Staking & Airport</NormalText>
@@ -54,13 +54,16 @@ export default function () {
                   SLK
                 </NormalText>
               </Flex.Row>
-
               <NormalText style={{ color: '#999999' }}>Can be harvest</NormalText>
             </Flex.Col>
-            <Btn>Harvest</Btn>
+            <Flex.Col style={{ alignItems: 'flex-start' }}>
+              <NormalText style={{ marginBottom: '36px' }} />
+              <Btn style={{ marginBottom: '16px' }}>Harvest</Btn>
+              <NormalText style={{ color: '#999999' }} />
+            </Flex.Col>
           </Flex.Row>
         </Card>
-        <Card style={{ marginBottom: '16px', marginRight: '4px' }}>
+        <Card style={{ marginBottom: '16px', marginRight: '2px', padding: '24px' }}>
           <Flex.Row style={{ justifyContent: 'space-between', alignItems: 'flex-end' }}>
             <Flex.Col style={{ alignItems: 'flex-start' }}>
               <NormalText style={{ marginBottom: '36px' }}>Equity pool</NormalText>
