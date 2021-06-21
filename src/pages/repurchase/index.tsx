@@ -20,31 +20,31 @@ export default function () {
       <Flex.Row style={{ justifyContent: 'space-between', flexWrap: 'wrap', margin: '48px 0 50px 0' }}>
         <Card style={{ marginBottom: '16px' }}>
           <Title1Thin style={{ marginBottom: '44px' }}>Fees</Title1Thin>
-          <Flex.Row style={{ justifyContent: 'space-between', alignItems: 'stretch' }}>
+          <Flex.Row style={{ justifyContent: 'space-between', alignItems: 'stretch', flexWrap: 'wrap' }}>
             <Flex.Col style={{ alignItems: 'flex-start' }}>
               <NumTextH2>$100</NumTextH2>
-              <NormalText style={{ marginTop: '16px' }}>Transaction Fees</NormalText>
+              <NormalText style={{ marginTop: '12px' }}>Transaction Fees</NormalText>
             </Flex.Col>
 
-            <Flex.Col style={{ alignItems: 'flex-end', margin: '0 18px' }}>
+            <D2b style={{ alignItems: 'flex-end', margin: '0 18px' }}>
               <NumTextH2>$1.00</NumTextH2>
-              <NormalText style={{ marginTop: '16px' }}>Redeem Fees</NormalText>
-            </Flex.Col>
+              <NormalText style={{ marginTop: '12px' }}>Redeem Fees</NormalText>
+            </D2b>
 
-            <VerLine />
+            <D2a />
 
-            <Flex.Col style={{ alignItems: 'flex-start', margin: '0 18px' }}>
+            <D2c style={{ alignItems: 'flex-start', margin: '0 18px' }}>
               <NumTextH2>$50</NumTextH2>
-              <NormalText style={{ marginTop: '16px' }}>Current balance</NormalText>
-            </Flex.Col>
+              <NormalText style={{ marginTop: '12px' }}>Current balance</NormalText>
+            </D2c>
 
             <Flex.Col style={{ alignItems: 'flex-end' }}>
               <NumTextH2>$51</NumTextH2>
-              <NormalText style={{ marginTop: '16px' }}> Consumption fee </NormalText>
+              <NormalText style={{ marginTop: '12px' }}> Consumption fee </NormalText>
             </Flex.Col>
           </Flex.Row>
         </Card>
-        <Card style={{ marginBottom: '16px' }}>
+        <D1>
           <Title1Thin style={{ marginBottom: '44px' }}>SLK Repurchase</Title1Thin>
           <Flex.Row style={{ justifyContent: 'space-between', alignItems: 'stretch' }}>
             <Flex.Col style={{ alignItems: 'flex-start' }}>
@@ -57,32 +57,48 @@ export default function () {
               <NormalText style={{ marginTop: '16px' }}>Amount burned</NormalText>
             </Flex.Col>
           </Flex.Row>
-        </Card>
+        </D1>
       </Flex.Row>
       <Title1Thin style={{ marginBottom: '42px' }}>Repurchase history</Title1Thin>
       <Card>
-        <Flex.Row style={{ justifyContent: 'space-between' }}>
-          <Flex.Col style={{ alignItems: 'flex-start' }}>
+        <D3z style={{ justifyContent: 'space-between' }}>
+          <D3a style={{ alignItems: 'flex-start' }}>
             <NormalText>Time</NormalText>
-            <NormalText style={{ color: '#999999', marginTop: '32px' }}>2021-05-06</NormalText>
-          </Flex.Col>
-          <Flex.Col style={{ alignItems: 'center' }}>
+            <LabelVal>2021-05-06</LabelVal>
+          </D3a>
+          <D3b style={{ alignItems: 'center' }}>
             <NormalText>Consumption fee</NormalText>
-            <NormalText style={{ color: '#999999', marginTop: '32px' }}>$51.00</NormalText>
-          </Flex.Col>
-          <Flex.Col style={{ alignItems: 'center' }}>
+            <LabelVal>$51.00</LabelVal>
+          </D3b>
+          <D3c style={{ alignItems: 'center' }}>
             <NormalText>Repurchase amount</NormalText>
-            <NormalText style={{ color: '#999999', marginTop: '32px' }}>100.000000 SLK</NormalText>
-          </Flex.Col>
-          <Flex.Col style={{ alignItems: 'flex-end' }}>
+            <LabelVal>100.000000 SLK</LabelVal>
+          </D3c>
+          <D3d style={{ alignItems: 'center' }}>
             <NormalText>Amount burned</NormalText>
-            <NormalText style={{ color: '#999999', marginTop: '32px' }}>37.000000 SLK</NormalText>
-          </Flex.Col>
-        </Flex.Row>
+            <LabelVal>37.000000 SLK</LabelVal>
+          </D3d>
+          <D3e style={{ alignItems: 'flex-end' }}>
+            <NormalText>Total reserves</NormalText>
+            <LabelVal>63.000000 SLK</LabelVal>
+          </D3e>
+        </D3z>
       </Card>
     </Page>
   )
 }
+
+const LabelVal = ({ children }) => {
+  return <LabelValSty style={{ color: '#999999', marginTop: '32px' }}>{children}</LabelValSty>
+}
+
+const LabelValSty = styled(NormalText)`
+  color: #999999;
+  margin-top: 20px;
+  @media (max-width: 500px) {
+    margin-top: 16px !important;
+  }
+`
 
 const InnerCard = styled.div`
   width: 321px;
@@ -102,4 +118,67 @@ const Round = styled.div`
   justify-content: center;
   color: #ffffff;
   font-size: 16px;
+`
+
+const D1 = styled(Card)`
+  margin-bottom: 16px;
+  @media (max-width: 500px) {
+    width: 100% !important;
+  }
+`
+
+const D2a = styled(VerLine)`
+  @media (max-width: 500px) {
+    display: none !important;
+  }
+`
+
+const D2b = styled(Flex.Col)`
+  @media (max-width: 500px) {
+    margin: 0 0 26px 75px !important;
+  }
+`
+
+const D2c = styled(Flex.Col)`
+  @media (max-width: 500px) {
+    margin: 0 65px 26px 0 !important;
+  }
+`
+
+const D3z = styled(Flex.Row)`
+  @media (max-width: 500px) {
+    flex-wrap: wrap !important;
+  }
+`
+const D3a = styled(Flex.Col)`
+  @media (max-width: 500px) {
+    margin: 0 100px 32px 0 !important;
+  }
+`
+
+const D3b = styled(Flex.Col)`
+  @media (max-width: 500px) {
+    align-items: flex-end !important;
+    margin-bottom: 32px !important;
+  }
+`
+const D3c = styled(Flex.Col)`
+  @media (max-width: 500px) {
+    align-items: flex-start !important;
+    margin: 0 60px 32px 0 !important;
+  }
+`
+
+const D3d = styled(Flex.Col)`
+  @media (max-width: 500px) {
+    align-items: flex-end !important;
+    margin-bottom: 32px !important;
+  }
+`
+
+const D3e = styled(Flex.Col)`
+  @media (max-width: 500px) {
+    align-items: flex-start !important;
+    margin: 0 60px 32px 0 !important;
+  }
 `

@@ -8,7 +8,7 @@ export default function () {
     <Page>
       <div style={{ position: 'fixed', width: '100%', height: '100%', overflow: 'hidden' }}>
         <div style={{ position: 'fixed', width: '100%', height: '100%' }}>
-          <img src={commingsoonImg} style={{ objectFit: 'cover' }} alt="" />
+          <img src={commingsoonImg} style={{ width: '100%', height: '100%', objectFit: 'cover' }} alt="" />
         </div>
         <div
           style={{

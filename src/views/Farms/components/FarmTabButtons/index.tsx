@@ -30,18 +30,33 @@ const FarmTabButtons: React.FC<FarmTabButtonsProps> = ({ hasStakeInFinishedFarms
   }
 
   return (
-    <Wrapper>
-      <ButtonMenu activeIndex={activeIndex} scale="sm" variant="subtle">
-        <ButtonMenuItem as={Link} to={`${url}`}>
-          {t('Live')}
-        </ButtonMenuItem>
-        <NotificationDot show={hasStakeInFinishedFarms}>
-          <ButtonMenuItem as={Link} to={`${url}/history`}>
-            {t('Finished')}
+    <div>
+
+      <div style={{display: 'flex'}}>
+          <ButtonMenuItem as={Link} to={`${url}`}>
+            {t('Live')}
           </ButtonMenuItem>
-        </NotificationDot>
-      </ButtonMenu>
-    </Wrapper>
+          <NotificationDot show={hasStakeInFinishedFarms}>
+            <ButtonMenuItem as={Link} to={`${url}/history`}>
+              {t('Finished')}
+            </ButtonMenuItem>
+          </NotificationDot>
+      </div>
+
+{/*     
+      <Wrapper>
+        <ButtonMenu activeIndex={activeIndex} scale="sm" variant="subtle" style={{background: 'transparent'}}>
+          <ButtonMenuItem as={Link} to={`${url}`}>
+            {t('Live')}
+          </ButtonMenuItem>
+          <NotificationDot show={hasStakeInFinishedFarms}>
+            <ButtonMenuItem as={Link} to={`${url}/history`}>
+              {t('Finished')}
+            </ButtonMenuItem>
+          </NotificationDot>
+        </ButtonMenu>
+      </Wrapper> */}
+    </div>
   )
 }
 

@@ -24,6 +24,8 @@ import FarmTabButtons from './components/FarmTabButtons'
 import { RowProps } from './components/FarmTable/Row'
 import ToggleView from './components/ToggleView/ToggleView'
 import { DesktopColumnSchema, ViewMode } from './components/types'
+import { Flex, Card, Title1, Title1Thin, NormalText, LinkText, NumTextH1, NumTextH2, VerLine, Btn } from '../../pages/components'
+
 
 const ControlContainer = styled.div`
   display: flex;
@@ -106,7 +108,8 @@ const Farms: React.FC = () => {
   const { data: farmsLP, userDataLoaded } = useFarms()
   const cakePrice = usePriceCakeBusd()
   const [query, setQuery] = useState('')
-  const [viewMode, setViewMode] = usePersistState(ViewMode.TABLE, { localStorageKey: 'pancake_farm_view' })
+  // const [viewMode, setViewMode] = usePersistState(ViewMode.TABLE, { localStorageKey: 'pancake_farm_view' })
+  const [viewMode, setViewMode] = useState(ViewMode.TABLE)
   const { account } = useWeb3React()
   const [sortOption, setSortOption] = useState('hot')
 
@@ -334,31 +337,54 @@ const Farms: React.FC = () => {
     )
   }
 
+  const HeadPart = () => {
+    return (
+      <Card>
+        <Flex.Col style={{ justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap' }}>
+          <div style={{ marginBottom: '16px' }}>
+            <Title1>Mining</Title1>
+            <NormalText style={{ margin: '24px 0 19px 0' }}>Hashrate determines your mining earnings , you can get more mining earnings</NormalText>
+            <LinkText>the rules of Hashrate &gt;</LinkText>
+          </div>
+          <InnerCard>
+            <NormalText style={{ color: '#999999' }}>My Hashrate</NormalText>
+            <NumTextH1 style={{ margin: '24px 0 29px 0' }}>360T</NumTextH1>
+            <Flex.Row>
+              <NormalText style={{ marginRight: '16px' }}>Management node</NormalText>
+              <Round>T</Round>
+            </Flex.Row>
+          </InnerCard>
+        </Flex.Col>
+      </Card>
+    )
+  }
+
   const handleSortOptionChange = (option: OptionProps): void => {
     setSortOption(option.value)
   }
 
   return (
     <>
-      <PageHeader>
+      {/* <PageHeader>
         <Heading as="h1" scale="xxl" color="secondary" mb="24px">
           {t('Farms')}
         </Heading>
         <Heading scale="lg" color="text">
           {t('Stake Liquidity Pool (LP) tokens to earn.')}
         </Heading>
-      </PageHeader>
+      </PageHeader> */}
       <Page>
+        <HeadPart />
         <ControlContainer>
           <ViewControls>
-            <ToggleView viewMode={viewMode} onToggle={(mode: ViewMode) => setViewMode(mode)} />
-            <ToggleWrapper>
+            {/* <ToggleView viewMode={viewMode} onToggle={(mode: ViewMode) => setViewMode(mode)} /> */}
+            {/* <ToggleWrapper>
               <Toggle checked={stakedOnly} onChange={() => setStakedOnly(!stakedOnly)} scale="sm" />
               <Text> {t('Staked only')}</Text>
-            </ToggleWrapper>
+            </ToggleWrapper> */}
             <FarmTabButtons hasStakeInFinishedFarms={stakedInactiveFarms.length > 0} />
           </ViewControls>
-          <FilterContainer>
+          {/* <FilterContainer>
             <LabelWrapper>
               <Text textTransform="uppercase">{t('Sort by')}</Text>
               <Select
@@ -391,7 +417,7 @@ const Farms: React.FC = () => {
               <Text textTransform="uppercase">{t('Search')}</Text>
               <SearchInput onChange={handleChangeQuery} placeholder="Search Farms" />
             </LabelWrapper>
-          </FilterContainer>
+          </FilterContainer> */}
         </ControlContainer>
         {renderContent()}
         <div ref={loadMoreRef} />
@@ -400,5 +426,25 @@ const Farms: React.FC = () => {
     </>
   )
 }
+
+const InnerCard = styled.div`
+  width: 321px;
+  padding: 27px 33px;
+  background: #222222;
+  border-radius: 6px;
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.1);
+`
+
+const Round = styled.div`
+  border: 1px solid #999999;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 16px;
+`
 
 export default Farms

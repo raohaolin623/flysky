@@ -28,6 +28,8 @@ const TradingCompetition = lazy(() => import('./views/TradingCompetition'))
 const Predictions = lazy(() => import('./views/Predictions'))
 
 const Home = lazy(() => import('./pages/home'))
+const Trade = lazy(() => import('./pages/trade'))
+const Liquid = lazy(() => import('./pages/liquid'))
 const EquityPool = lazy(() => import('./pages/equitypool'))
 const Repurchase = lazy(() => import('./pages/repurchase'))
 const Invitation = lazy(() => import('./pages/invitation'))
@@ -55,6 +57,12 @@ const App: React.FC = () => {
           <Switch>
             <Route path="/" exact>
               <Home />
+            </Route>
+            <Route path="/trade">
+              <Trade />
+            </Route>
+            <Route path="/liquidity">
+              <Liquid />
             </Route>
             <Route path="/farms">
               <Farms />

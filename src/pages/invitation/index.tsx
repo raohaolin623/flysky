@@ -29,15 +29,15 @@ export default function () {
             <NormalText style={{ marginBottom: '24px' }}>Number of invited users</NormalText>
             <NumTextH1>100</NumTextH1>
           </div>
-          <VerLine />
+          <D2 />
           <div>
             <NormalText style={{ marginBottom: '24px' }}>Increased Hashrate</NormalText>
             <NumTextH1>210T</NumTextH1>
           </div>
         </Flex.Row>
       </Card>
-      <Card>
-        <Title1Thin style={{ marginBottom: '72px' }}>My Invite Link</Title1Thin>
+      <Card style={{marginBottom: '80px'}}>
+        <Title1Thin style={{ marginBottom: '42px' }}>My Invite Link</Title1Thin>
         <Flex.Col style={{ alignItems: 'center' }}>
           <a href="#11">
             <NormalText>http://insurance_tmp.web.xmublockchain.com/#/dash---</NormalText>
@@ -46,6 +46,7 @@ export default function () {
           <NormalText>You can invite others to earn Hashrate</NormalText>
         </Flex.Col>
       </Card>
+      <div style={{height: '30px'}} />
     </Page>
   )
 }
@@ -68,4 +69,17 @@ const Round = styled.div`
   justify-content: center;
   color: #ffffff;
   font-size: 16px;
+`
+
+const D1 = styled(NormalText)`
+  @media (max-width: 500px) {
+    word-break: break-all !important;
+  }
+`
+
+const D2 = styled(VerLine)`
+  @media (max-width: 500px) {
+    background-color: transparent !important;
+    width: 12px !important;
+  }
 `

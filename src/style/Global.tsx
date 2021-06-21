@@ -22,6 +22,9 @@ const GlobalStyle = createGlobalStyle`
   [title=Bunny] {
     display: none !important;
   }
+  [role=presentation] {
+    background-color: rgba(255,0,0,.06);
+  }
 `
 
 export default GlobalStyle
