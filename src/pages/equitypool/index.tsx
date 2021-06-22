@@ -70,7 +70,7 @@ export default function () {
                 <NormalText style={{ color: '#999999' }}>SLK Staked</NormalText>
                 <LongBtn style={{ margin: '42px 0 0 0' }}>Approve</LongBtn>
               </D3a>
-              <VerLine style={{ margin: '0 32px 0 46px' }} />
+              <D3aa style={{ margin: '0 32px 0 46px' }} />
               <Flex.Col style={{ flex: 1 }}>
                 <Flex.Row style={{ justifyContent: 'space-between' }}>
                   <NormalText>SLK Earned</NormalText>
@@ -136,8 +136,14 @@ const D3 = styled(Flex.Row)`
 const D3a = styled(Flex.Col)`
   align-items: center;
   @media (max-width: 500px) {
-    margin-bottom: 42px;
+    margin-bottom: 42px !important;
     flex: 1;
+  }
+`
+
+const D3aa = styled(VerLine)`
+  @media (max-width: 500px) {
+    display: none !important;
   }
 `
 
